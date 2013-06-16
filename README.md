@@ -1,4 +1,4 @@
-grails-neo4j-dummy
+Restaurant-Grails-Neo4j
 ==================
 
 Sample app created using Grails plugin named Neo4j GORM (http://www.grails.org/plugin/neo4j).
