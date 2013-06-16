@@ -10,8 +10,7 @@ grails {
         // params: optional map passed to EmbeddedGraphDatabase
         type = "embedded"
         // location = "data/neo4j"
-        // params = [:]
-
+        params = [ enable_remote_shell : true]
 
         // 2) rest
         // when using a Neo4j server via rest REST uncomment the following line
@@ -54,7 +53,7 @@ grails {
     environments {
         development {
             dataSource {
-                dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+                dbCreate = "create" // one of 'create', 'create-drop','update'
                 url = "jdbc:h2:mem:devDB"
             }
         }

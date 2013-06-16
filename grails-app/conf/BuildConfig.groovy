@@ -33,6 +33,7 @@ grails.project.dependency.resolution = {
 
         mavenLocal()
         mavenCentral()
+        mavenRepo 'http://m2.neo4j.org/releases'
 
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://snapshots.repository.codehaus.org"
@@ -49,13 +50,22 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.22'
 
 
+        //==========Graph db related dependencies============
         compile("org.neo4j:neo4j-community:$neo4jVersion")
 
         // next four lines are required if you're using embedded/ha *and* you want the webadmin available
         compile(group:"org.neo4j.app", name:"neo4j-server", version:neo4jVersion)
-        runtime(group:"org.neo4j.app", name:"neo4j-server", version:neo4jVersion, branch:"static-web")
+        //Due to issue in grails resolving dependencies with classifier/branch, added the jar to lib/ directory
+        //runtime(group:"org.neo4j.app", name:"neo4j-server", version:neo4jVersion, branch:"static-web")
         runtime('com.sun.jersey:jersey-server:1.9')
         runtime('com.sun.jersey:jersey-core:1.9')
+
+        runtime (group:"org.neo4j", name:"neo4j-shell", version:"1.8.M07")
+
+        //gremlin dependencies
+        compile('com.tinkerpop.gremlin:gremlin:2.3.0')
+
+
 
     }
 

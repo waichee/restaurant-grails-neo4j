@@ -18,7 +18,6 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"></div>
     <div id="globalNav" class="nav" role="navigation">
         <ul>
             <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
